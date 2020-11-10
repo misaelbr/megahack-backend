@@ -18,6 +18,7 @@ profileRouter.put(
     [Segments.BODY]: {
       name: Joi.string().required().required(),
       email: Joi.string().email().required(),
+      gender: Joi.string(),
       old_password: Joi.string(),
       password: Joi.string(),
       password_confirmation: Joi.string().valid(Joi.ref('password')),
