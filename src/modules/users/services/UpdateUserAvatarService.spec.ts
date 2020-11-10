@@ -25,6 +25,7 @@ describe('CreateUser', () => {
       name: 'John Doe',
       email: 'johndoe@example.com',
       password: '123456',
+      gender: 'male',
     });
 
     await updateUserAvatar.execute({
@@ -51,6 +52,7 @@ describe('CreateUser', () => {
       name: 'John Doe',
       email: 'johndoe@example.com',
       password: '123456',
+      gender: 'male',
     });
 
     await updateUserAvatar.execute({

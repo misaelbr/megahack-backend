@@ -12,6 +12,7 @@ interface IRequest {
   email: string;
   old_password?: string;
   password?: string;
+  gender: 'male' | 'female';
 }
 
 @injectable()
@@ -30,6 +31,7 @@ class UpdateProfileService {
     email,
     old_password,
     password,
+    gender,
   }: IRequest): Promise<User> {
     const user = await this.usersRepository.findById(user_id);
 
@@ -45,6 +47,9 @@ class UpdateProfileService {
     user.name = name;
     user.email = email;
 
+    if (user.gender) {
+      user.gender = gender;
+    }
     if (password && !old_password) {
       throw new AppError(
         'You neeed to inform the old password to set a new password.'

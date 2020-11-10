@@ -10,6 +10,7 @@ interface IRequest {
   name: string;
   email: string;
   password: string;
+  gender: 'female' | 'male';
 }
 
 @injectable()
@@ -25,7 +26,12 @@ class CreateUserService {
     private cacheProvider: ICacheProvider
   ) {}
 
-  public async execute({ name, email, password }: IRequest): Promise<User> {
+  public async execute({
+    name,
+    email,
+    password,
+    gender,
+  }: IRequest): Promise<User> {
     const checkUserExists = await this.userRepository.findByEmail(email);
 
     if (checkUserExists) {
@@ -38,6 +44,7 @@ class CreateUserService {
       name,
       email,
       password: hashedPassword,
+      gender,
     });
 
     this.cacheProvider.invalidate('users-list');

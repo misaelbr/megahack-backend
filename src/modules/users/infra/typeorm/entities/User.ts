@@ -22,6 +22,9 @@ class User {
   email: string;
 
   @Column()
+  gender: 'male' | 'female' | 'not informed';
+
+  @Column()
   @Exclude()
   password: string;
 
