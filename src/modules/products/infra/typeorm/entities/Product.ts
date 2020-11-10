@@ -34,6 +34,9 @@ class Product {
   @Column()
   description: string;
 
+  @Column()
+  gender: string;
+
   @Expose({ name: 'image_url' })
   getimageUrl(): string | null {
     if (!this.image) {
