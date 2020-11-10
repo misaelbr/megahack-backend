@@ -26,6 +26,7 @@ describe('ListUsers', () => {
       name: 'John Doe',
       email: 'johndoe@example.com',
       password: '123456',
+      gender: 'male',
     });
 
     let obj1: userTest;
@@ -37,6 +38,7 @@ describe('ListUsers', () => {
       name: 'John Trê',
       email: 'johntre@example.com',
       password: '123456',
+      gender: 'male',
     });
 
     let obj2: userTest;
