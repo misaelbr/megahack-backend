@@ -8,7 +8,7 @@ export default class AddFieldGenderToUsers1605011992481
       new TableColumn({
         name: 'gender',
         type: 'varchar',
-        default: 'not informed',
+        isNullable: true,
       })
     );
   }
