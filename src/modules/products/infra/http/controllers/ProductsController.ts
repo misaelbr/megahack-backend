@@ -4,6 +4,7 @@ import { container } from 'tsyringe';
 
 import CreateProductService from '@modules/products/services/CreateProductService';
 import ListProductService from '@modules/products/services/ListProductsService';
+import ListProductByIdService from '@modules/products/services/ListProductByIdService';
 
 export default class ProductsController {
   public async index(request: Request, response: Response): Promise<Response> {
@@ -38,6 +39,16 @@ export default class ProductsController {
       gender,
       category_id,
     });
+
+    return response.json(product);
+  }
+
+  public async show(request: Request, response: Response): Promise<Response> {
+    const { id } = request.params;
+
+    const prod = container.resolve(ListProductByIdService);
+
+    const product = await prod.execute({ id });
 
     return response.json(product);
   }

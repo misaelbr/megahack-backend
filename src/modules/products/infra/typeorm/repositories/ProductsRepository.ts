@@ -13,7 +13,9 @@ class ProductsRepository implements IProductsRepository {
     this.ormRepository = getRepository(Product);
   }
   public async findById(id: string): Promise<Product | undefined> {
-    throw new Error('Method not implemented.');
+    const product = this.ormRepository.findOne(id);
+
+    return product;
   }
 
   public async create(data: ICreateProductDTO): Promise<Product> {
