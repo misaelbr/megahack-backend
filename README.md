@@ -111,8 +111,8 @@ docker start redis
 
 ```bash
 yarn install
-```
 
-```bash
+yarn typeorm migration:run
+
 yarn dev:server
 ```
