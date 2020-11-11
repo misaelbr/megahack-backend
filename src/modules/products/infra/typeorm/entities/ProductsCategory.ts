@@ -44,7 +44,7 @@ class ProductsCategory {
   image: string;
 
   @OneToMany(() => Product, product => product.category)
-  product: Product;
+  product: Product[];
 
   @CreateDateColumn()
   created_at: Date;

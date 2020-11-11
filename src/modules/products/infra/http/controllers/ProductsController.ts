@@ -3,6 +3,7 @@ import { Request, Response } from 'express';
 import { container } from 'tsyringe';
 
 import CreateProductService from '@modules/products/services/CreateProductService';
+import UpdateProductService from '@modules/products/services/UpdateProductService';
 import ListProductService from '@modules/products/services/ListProductsService';
 import ListProductByIdService from '@modules/products/services/ListProductByIdService';
 
@@ -49,6 +50,36 @@ export default class ProductsController {
     const prod = container.resolve(ListProductByIdService);
 
     const product = await prod.execute({ id });
+
+    return response.json(product);
+  }
+
+  public async update(request: Request, response: Response): Promise<Response> {
+    const {
+      id,
+      name,
+      color,
+      size,
+      brand,
+      price,
+      description,
+      gender,
+      category_id,
+    } = request.body;
+
+    const updateProduct = container.resolve(UpdateProductService);
+
+    const product = await updateProduct.execute({
+      id,
+      name,
+      color,
+      size,
+      brand,
+      price,
+      description,
+      gender,
+      category_id,
+    });
 
     return response.json(product);
   }

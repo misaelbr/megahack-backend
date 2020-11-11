@@ -4,6 +4,9 @@ import { container } from 'tsyringe';
 
 import CreateProductsCategoryService from '@modules/products/services/CreateProductsCategoryService';
 import ListProductsCategoryService from '@modules/products/services/ListProductsCategoryService';
+import ListProductsCategoryByNameService from '@modules/products/services/ListProductsCategoryByNameService';
+import UpdateProductsCategoryService from '@modules/products/services/UpdateProductsCategoryService';
+import AppError from '@shared/errors/AppError';
 
 export default class ProductsController {
   public async index(request: Request, response: Response): Promise<Response> {
@@ -27,5 +30,25 @@ export default class ProductsController {
     });
 
     return response.json(category);
+  }
+
+  public async update(request: Request, response: Response): Promise<Response> {
+    const { id, name, description } = request.body;
+
+    const listCategoryByName = container.resolve(
+      ListProductsCategoryByNameService
+    );
+
+    const categoryNameExists = await listCategoryByName.execute({ name });
+
+    if (categoryNameExists) {
+      throw new AppError('Category name already in use!', 400);
+    }
+
+    const update = container.resolve(UpdateProductsCategoryService);
+
+    const updatedCategory = await update.execute({ id, name, description });
+
+    return response.json(updatedCategory);
   }
 }

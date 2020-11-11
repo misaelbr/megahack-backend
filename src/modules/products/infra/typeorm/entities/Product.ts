@@ -62,9 +62,7 @@ class Product {
   @Column()
   category_id: string;
 
-  @ManyToOne(() => ProductsCategory, category => category.product, {
-    eager: true,
-  })
+  @ManyToOne(() => ProductsCategory, category => category.product)
   @JoinColumn({ name: 'category_id' })
   category: ProductsCategory;
 
