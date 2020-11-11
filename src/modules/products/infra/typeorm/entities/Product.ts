@@ -29,6 +29,9 @@ class Product {
   size: string;
 
   @Column()
+  brand: string;
+
+  @Column()
   price: number;
 
   @Column()

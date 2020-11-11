@@ -27,13 +27,11 @@ class ListProductsCategoryServices {
       return categoriesList;
     }
 
-    const categories = await classToClass(
-      this.productsCategoryRepository.findAllCategories()
-    );
+    const categories = await this.productsCategoryRepository.findAllCategories();
 
-    await this.cacheProvider.save('categories-list', categories);
+    await this.cacheProvider.save('categories-list', classToClass(categories));
 
-    return categories;
+    return classToClass(categories);
   }
 }
 

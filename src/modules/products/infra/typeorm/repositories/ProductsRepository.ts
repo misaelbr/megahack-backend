@@ -18,7 +18,7 @@ class ProductsRepository implements IProductsRepository {
   public async create(data: ICreateProductDTO): Promise<Product> {
     const product = this.ormRepository.create(data);
 
-    await this.ormRepository.save(data);
+    await this.ormRepository.save(product);
 
     return product;
   }

@@ -43,7 +43,7 @@ export default class Product1605027556174 implements MigrationInterface {
           {
             name: 'description',
             type: 'varchar',
-            isUnique: true,
+            isNullable: true,
           },
           {
             name: 'image',

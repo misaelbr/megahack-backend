@@ -7,12 +7,11 @@ import ICacheProvider from '@shared/container/providers/CacheProvider/models/ICa
 
 import IProductsRepository from '../repositories/IProductsRepository';
 import { classToClass } from 'class-transformer';
-import { th } from 'date-fns/locale';
-
 interface IRequest {
   name: string;
   color: string;
   size: string;
+  brand: string;
   price: number;
   description: string;
   gender: string;
@@ -33,6 +32,7 @@ class CreateProductService {
     name,
     color,
     size,
+    brand,
     price,
     description,
     gender,
@@ -42,13 +42,12 @@ class CreateProductService {
       name,
       color,
       size,
+      brand,
       price,
       description,
       gender,
       category_id,
     });
-
-    await this.productsRepository.save(product);
 
     await this.cacheProvider.invalidate('products-list');
 
