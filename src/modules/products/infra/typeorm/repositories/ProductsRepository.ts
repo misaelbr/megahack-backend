@@ -15,6 +15,7 @@ class ProductsRepository implements IProductsRepository {
   public async findById(id: string): Promise<Product | undefined> {
     throw new Error('Method not implemented.');
   }
+
   public async create(data: ICreateProductDTO): Promise<Product> {
     const product = this.ormRepository.create(data);
 
@@ -22,6 +23,7 @@ class ProductsRepository implements IProductsRepository {
 
     return product;
   }
+
   public async save(data: Product): Promise<Product> {
     return await this.ormRepository.save(data);
   }
@@ -49,6 +51,7 @@ class ProductsRepository implements IProductsRepository {
 
     return products;
   }
+
   public async findAllProductsByColor(
     color: string
   ): Promise<Product[] | undefined> {
@@ -58,6 +61,7 @@ class ProductsRepository implements IProductsRepository {
 
     return products;
   }
+
   public async findAllProductsByCategoryIdAndGender({
     category_id,
     gender,
@@ -69,4 +73,5 @@ class ProductsRepository implements IProductsRepository {
     return products;
   }
 }
+
 export default ProductsRepository;

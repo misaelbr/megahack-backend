@@ -21,11 +21,13 @@ class ProductsCategoryRepository implements IProductsCategoryRepository {
 
     return productCategory;
   }
+
   public async save(
     productCategory: ProductsCategory
   ): Promise<ProductsCategory> {
     return await this.ormRepository.save(productCategory);
   }
+
   public async findById(id: string): Promise<ProductsCategory | undefined> {
     const productCategory = await this.ormRepository.findOne({
       where: { id },
@@ -33,11 +35,13 @@ class ProductsCategoryRepository implements IProductsCategoryRepository {
 
     return productCategory;
   }
+
   public async findAllCategories(): Promise<ProductsCategory[] | undefined> {
     const productsCategory = await this.ormRepository.find();
 
     return productsCategory;
   }
+
   public async findCategoryByName(
     name: string
   ): Promise<ProductsCategory | undefined> {
