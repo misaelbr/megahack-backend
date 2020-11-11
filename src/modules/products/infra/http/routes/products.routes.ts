@@ -2,9 +2,11 @@ import { Router } from 'express';
 import { celebrate, Segments, Joi } from 'celebrate';
 
 import ProductsController from '../controllers/ProductsController';
+import ProductsByCategoryNameController from '../controllers/ProductsByCategoryNameController';
 
 const productsRouter = Router();
 const productsController = new ProductsController();
+const productsByCategoryNameController = new ProductsByCategoryNameController();
 
 productsRouter.post(
   '/',
@@ -33,6 +35,16 @@ productsRouter.get(
     },
   }),
   productsController.show
+);
+
+productsRouter.get(
+  '/cat/:category_name',
+  celebrate({
+    [Segments.PARAMS]: {
+      category_name: Joi.string().required(),
+    },
+  }),
+  productsByCategoryNameController.index
 );
 
 export default productsRouter;
