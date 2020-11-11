@@ -5,13 +5,17 @@ import { celebrate, Segments, Joi } from 'celebrate';
 import uploadConfig from '@config/upload';
 
 import ProductsController from '../controllers/ProductsController';
+import ProductsByGenderController from '../controllers/ProductsByGenderController';
 import ProductsByCategoryNameController from '../controllers/ProductsByCategoryNameController';
+import ProductsByCategoryNameAndGenderController from '../controllers/ProductsByCategoryNameAndGenderController';
 import ProductsImageController from '../controllers/ProductsImageController';
 
 const productsRouter = Router();
 const productsController = new ProductsController();
+const productsByGenderController = new ProductsByGenderController();
 const productsByCategoryNameController = new ProductsByCategoryNameController();
 const productsImageController = new ProductsImageController();
+const productsByCategoryNameAndGenderController = new ProductsByCategoryNameAndGenderController();
 
 const upload = multer(uploadConfig.multer);
 
@@ -70,6 +74,27 @@ productsRouter.get(
     },
   }),
   productsByCategoryNameController.index
+);
+
+productsRouter.get(
+  '/cat/:category_name/:gender',
+  celebrate({
+    [Segments.PARAMS]: {
+      category_name: Joi.string().required(),
+      gender: Joi.string().required(),
+    },
+  }),
+  productsByCategoryNameAndGenderController.index
+);
+
+productsRouter.get(
+  '/gender/:gender',
+  celebrate({
+    [Segments.PARAMS]: {
+      gender: Joi.string().required(),
+    },
+  }),
+  productsByGenderController.index
 );
 
 productsRouter.patch(
