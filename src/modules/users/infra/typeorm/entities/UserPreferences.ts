@@ -18,7 +18,7 @@ class UserPreferences {
   favorite_size: string;
 
   @Column()
-  look_style_id: string;
+  look_styles_id: string;
 
   @Column()
   user_id: string;

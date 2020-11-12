@@ -9,6 +9,9 @@ import UsersRepository from '@modules/users/infra/typeorm/repositories/UsersRepo
 import IUserTokensRepository from '@modules/users/repositories/IUserTokensRepository';
 import UserTokensRepository from '@modules/users/infra/typeorm/repositories/UserTokensRepository';
 
+import IUserPreferencesRepository from '@modules/users/repositories/IUserPreferencesRepository';
+import UserPreferencesRepository from '@modules/users/infra/typeorm/repositories/UserPreferencesRepository';
+
 import IProductsCategoryRepository from '@modules/products/repositories/IProductsCategoryRepository';
 import ProductsCategoryRepository from '@modules/products/infra/typeorm/repositories/ProductsCategoryRepository';
 
@@ -23,6 +26,11 @@ container.registerSingleton<IUsersRepository>(
 container.registerSingleton<IUserTokensRepository>(
   'UserTokensRepository',
   UserTokensRepository
+);
+
+container.registerSingleton<IUserPreferencesRepository>(
+  'UserPreferencesRepository',
+  UserPreferencesRepository
 );
 
 container.registerSingleton<IProductsCategoryRepository>(
