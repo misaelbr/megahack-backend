@@ -18,6 +18,12 @@ import ProductsCategoryRepository from '@modules/products/infra/typeorm/reposito
 import IProductsRepository from '@modules/products/repositories/IProductsRepository';
 import ProductsRepository from '@modules/products/infra/typeorm/repositories/ProductsRepository';
 
+import IProductsLookStylesRepository from '@modules/products/repositories/IProductsLookStylesRepository';
+import ProductsLookStylesRepository from '@modules/products/infra/typeorm/repositories/ProductsLookStylesRepository';
+
+import ILookStylesRepository from '@modules/looks/repositories/ILookStylesRepository';
+import LookStylesRepository from '@modules/looks/infra/typeorm/repositories/LookStylesRepository';
+
 container.registerSingleton<IUsersRepository>(
   'UsersRepository',
   UsersRepository
@@ -41,4 +47,14 @@ container.registerSingleton<IProductsCategoryRepository>(
 container.registerSingleton<IProductsRepository>(
   'ProductsRepository',
   ProductsRepository
+);
+
+container.registerSingleton<IProductsLookStylesRepository>(
+  'ProductsRepository',
+  ProductsLookStylesRepository
+);
+
+container.registerSingleton<ILookStylesRepository>(
+  'LookStylesRepository',
+  LookStylesRepository
 );

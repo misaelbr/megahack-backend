@@ -9,6 +9,7 @@ import ProductsByGenderController from '../controllers/ProductsByGenderControlle
 import ProductsByCategoryNameController from '../controllers/ProductsByCategoryNameController';
 import ProductsByCategoryNameAndGenderController from '../controllers/ProductsByCategoryNameAndGenderController';
 import ProductsImageController from '../controllers/ProductsImageController';
+import ProductsLookStylesController from '../controllers/ProductsLooksStylesController';
 
 const productsRouter = Router();
 const productsController = new ProductsController();
@@ -16,6 +17,7 @@ const productsByGenderController = new ProductsByGenderController();
 const productsByCategoryNameController = new ProductsByCategoryNameController();
 const productsImageController = new ProductsImageController();
 const productsByCategoryNameAndGenderController = new ProductsByCategoryNameAndGenderController();
+const productsLookStylesController = new ProductsLookStylesController();
 
 const upload = multer(uploadConfig.multer);
 
@@ -101,6 +103,27 @@ productsRouter.patch(
   '/image',
   upload.single('image'),
   productsImageController.update
+);
+
+productsRouter.get(
+  '/look/:look_styles_id',
+  celebrate({
+    [Segments.PARAMS]: {
+      look_styles_id: Joi.string().uuid().required(),
+    },
+  }),
+  productsLookStylesController.show
+);
+
+productsRouter.post(
+  '/look',
+  celebrate({
+    [Segments.BODY]: {
+      product_id: Joi.string().uuid().required(),
+      look_styles_id: Joi.string().uuid().required(),
+    },
+  }),
+  productsLookStylesController.create
 );
 
 export default productsRouter;

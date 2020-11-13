@@ -10,7 +10,7 @@ import { Expose } from 'class-transformer';
 
 import uploadConfig from '@config/upload';
 
-@Entity('look_style')
+@Entity('look_styles')
 class LookStyle {
   @PrimaryGeneratedColumn('uuid')
   id: string;

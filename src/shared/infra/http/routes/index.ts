@@ -6,6 +6,7 @@ import passwordRouter from '@modules/users/infra/http/routes/password.routes';
 import profileRouter from '@modules/users/infra/http/routes/profile.routes';
 import productsRouter from '@modules/products/infra/http/routes/products.routes';
 import productsCategoryRouter from '@modules/products/infra/http/routes/productsCategory.routes';
+import lookStylesRouter from '@modules/looks/infra/http/routes/lookStyles.routes';
 
 const routes = Router();
 
@@ -15,5 +16,6 @@ routes.use('/password', passwordRouter);
 routes.use('/profile', profileRouter);
 routes.use('/products', productsRouter);
 routes.use('/category', productsCategoryRouter);
+routes.use('/looks', lookStylesRouter);
 
 export default routes;

@@ -1,7 +1,5 @@
 import { inject, injectable } from 'tsyringe';
 
-import AppError from '@shared/errors/AppError';
-
 import Product from '@modules/products/infra/typeorm/entities/Product';
 import ICacheProvider from '@shared/container/providers/CacheProvider/models/ICacheProvider';
 
