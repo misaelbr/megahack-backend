@@ -11,7 +11,7 @@ export default class LookStylesController {
   public async index(request: Request, response: Response): Promise<Response> {
     const listLookStyles = container.resolve(ListAllLookStylesService);
 
-    const lookStyles = listLookStyles.execute();
+    const lookStyles = await listLookStyles.execute();
 
     return response.json(lookStyles);
   }

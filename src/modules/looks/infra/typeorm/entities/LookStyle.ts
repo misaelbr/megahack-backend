@@ -4,11 +4,16 @@ import {
   PrimaryGeneratedColumn,
   CreateDateColumn,
   UpdateDateColumn,
+  ManyToMany,
+  OneToMany,
+  JoinTable,
 } from 'typeorm';
 
 import { Expose } from 'class-transformer';
 
 import uploadConfig from '@config/upload';
+
+import ProductLookStyles from '@modules/products/infra/typeorm/entities/ProductsLookStyles';
 
 @Entity('look_styles')
 class LookStyle {
@@ -39,6 +44,12 @@ class LookStyle {
 
   @Column()
   image: string;
+
+  @OneToMany(
+    () => ProductLookStyles,
+    product_look_styles => product_look_styles.look_style
+  )
+  product_look_styles: ProductLookStyles[];
 
   @CreateDateColumn()
   created_at: Date;

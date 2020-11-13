@@ -36,7 +36,7 @@ class ProductsLookStylesRepository implements IProductsLookStyles {
   ): Promise<ProductsLookStyles[] | undefined> {
     const productsLookStylesList = await this.ormRepository.find({
       where: { product_id },
-      relations: ['products', 'lookstyles'],
+      relations: ['look_style'],
     });
 
     return productsLookStylesList;
@@ -47,7 +47,7 @@ class ProductsLookStylesRepository implements IProductsLookStyles {
   ): Promise<ProductsLookStyles[] | undefined> {
     const productsLookStylesList = await this.ormRepository.find({
       where: { look_styles_id },
-      relations: ['products', 'lookstyles'],
+      relations: ['product'],
     });
 
     return productsLookStylesList;

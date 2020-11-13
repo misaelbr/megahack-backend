@@ -6,6 +6,9 @@ import {
   UpdateDateColumn,
   JoinColumn,
   ManyToOne,
+  ManyToMany,
+  OneToMany,
+  JoinTable,
 } from 'typeorm';
 
 import { Expose } from 'class-transformer';
@@ -13,6 +16,7 @@ import { Expose } from 'class-transformer';
 import ProductsCategory from './ProductsCategory';
 
 import uploadConfig from '@config/upload';
+import ProductLookStyles from './ProductsLookStyles';
 
 @Entity('products')
 class Product {
@@ -65,6 +69,12 @@ class Product {
   @ManyToOne(() => ProductsCategory, category => category.product)
   @JoinColumn({ name: 'category_id' })
   category: ProductsCategory;
+
+  @OneToMany(
+    () => ProductLookStyles,
+    product_look_styles => product_look_styles.product
+  )
+  product_look_styles: ProductLookStyles[];
 
   @CreateDateColumn()
   created_at: Date;

@@ -14,7 +14,7 @@ export default class LookStylesByNameController {
     const lookStyles = await findLookStyles.execute({ name });
 
     if (!lookStyles) {
-      throw new AppError('LookStylename not found!', 404);
+      throw new AppError('LookStyle name not found!', 404);
     }
 
     return response.json(lookStyles);

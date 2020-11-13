@@ -50,7 +50,7 @@ container.registerSingleton<IProductsRepository>(
 );
 
 container.registerSingleton<IProductsLookStylesRepository>(
-  'ProductsRepository',
+  'ProductsLookStylesRepository',
   ProductsLookStylesRepository
 );
 

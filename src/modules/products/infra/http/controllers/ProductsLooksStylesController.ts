@@ -20,6 +20,20 @@ class ProductsLookStylesController {
     return response.json(products);
   }
 
+  public async read(request: Request, response: Response): Promise<Response> {
+    const { product_id } = request.params;
+
+    const findLooksByProductId = container.resolve(
+      ListProductsLookStylesByProductIdService
+    );
+
+    const looksStylesProducts = await findLooksByProductId.execute({
+      product_id,
+    });
+
+    return response.json(looksStylesProducts);
+  }
+
   public async create(request: Request, response: Response): Promise<Response> {
     const { product_id, look_styles_id } = request.body;
 

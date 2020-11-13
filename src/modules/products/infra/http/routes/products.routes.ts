@@ -115,6 +115,16 @@ productsRouter.get(
   productsLookStylesController.show
 );
 
+productsRouter.get(
+  '/look/product/:product_id',
+  celebrate({
+    [Segments.PARAMS]: {
+      product_id: Joi.string().uuid().required(),
+    },
+  }),
+  productsLookStylesController.read
+);
+
 productsRouter.post(
   '/look',
   celebrate({
