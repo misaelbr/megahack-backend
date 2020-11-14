@@ -1,7 +1,5 @@
 import { inject, injectable } from 'tsyringe';
 
-import ProductsLookStyles from '@modules/products/infra/typeorm/entities/ProductsLookStyles';
-
 import IProductsLookStylesRepository from '@modules/products/repositories/IProductsLookStylesRepository';
 import Product from '../infra/typeorm/entities/Product';
 import { classToClass } from 'class-transformer';
