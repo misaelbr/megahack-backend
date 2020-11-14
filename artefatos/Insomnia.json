@@ -1,1 +1,916 @@
-{"_type":"export","__export_format":4,"__export_date":"2020-11-14T02:07:16.253Z","__export_source":"insomnia.desktop.app:v2020.3.3","resources":[{"_id":"req_b7dca3f8b3634f60b061252c258416d7","authentication":{},"body":{"mimeType":"application/json","text":"{\n \"name\": \"Primavera\",\n\t\"description\": \"Primavera é um look que combina roupas leves e curtas\"\n}"},"created":1605291550151,"description":"","headers":[{"id":"pair_0892d782c013426fb2c062cf61d9f4e3","name":"Content-Type","value":"application/json"}],"isPrivate":false,"metaSortKey":-1605291550151,"method":"POST","modified":1605310344096,"name":"CreateLook","parameters":[],"parentId":"fld_c370b54cb6c34c42b369ba8a16a02660","settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingFollowRedirects":"global","settingRebuildPath":true,"settingSendCookies":true,"settingStoreCookies":true,"url":"{{ base_url }}/{{ resourse }}","_type":"request"},{"_id":"fld_c370b54cb6c34c42b369ba8a16a02660","created":1605291532150,"description":"","environment":{"resourse":"looks"},"environmentPropertyOrder":{"&":["resourse"]},"metaSortKey":-1605291532150,"modified":1605291601241,"name":"Looks","parentId":"wrk_f10063a658f84b6997fb8238087961c4","_type":"request_group"},{"_id":"wrk_f10063a658f84b6997fb8238087961c4","created":1604955798492,"description":"","modified":1604955798492,"name":"Linker","parentId":null,"scope":null,"_type":"workspace"},{"_id":"req_bc40db086caf4c319357a621a7ee3d15","authentication":{},"body":{},"created":1605291718419,"description":"","headers":[],"isPrivate":false,"metaSortKey":-1605173677566,"method":"GET","modified":1605291736288,"name":"ListLooks","parameters":[],"parentId":"fld_c370b54cb6c34c42b369ba8a16a02660","settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingFollowRedirects":"global","settingRebuildPath":true,"settingSendCookies":true,"settingStoreCookies":true,"url":"{{ base_url }}/{{ resourse }}","_type":"request"},{"_id":"req_6ef60826be93454597956852a4e0bf8e","authentication":{},"body":{},"created":1605055804981,"description":"","headers":[],"isPrivate":false,"metaSortKey":-1605055804981,"method":"GET","modified":1605055876419,"name":"ListCategories","parameters":[],"parentId":"fld_529905423ae34e41a5a9e7301696a436","settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingFollowRedirects":"global","settingRebuildPath":true,"settingSendCookies":true,"settingStoreCookies":true,"url":"{{ base_url }}/{{ resourse }}","_type":"request"},{"_id":"fld_529905423ae34e41a5a9e7301696a436","created":1605055777969,"description":"","environment":{"resourse":"category"},"environmentPropertyOrder":{"&":["resourse"]},"metaSortKey":-1605055777969,"modified":1605055822984,"name":"ProductsCategory","parentId":"wrk_f10063a658f84b6997fb8238087961c4","_type":"request_group"},{"_id":"req_f35e078f398e48b1adbc28ae66f59a5b","authentication":{},"body":{"mimeType":"application/json","text":"{\n\t\"name\": \"Calças\",\n\t\"description\": \"Aqui você encontra uma variedade incrível de calças\"\n}"},"created":1605055886344,"description":"","headers":[{"id":"pair_4c63f7aa1aff4584863cb6c077aa0012","name":"Content-Type","value":"application/json"}],"isPrivate":false,"metaSortKey":-1605046528806.75,"method":"POST","modified":1605057722547,"name":"CreateCategory","parameters":[],"parentId":"fld_529905423ae34e41a5a9e7301696a436","settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingFollowRedirects":"global","settingRebuildPath":true,"settingSendCookies":true,"settingStoreCookies":true,"url":"{{ base_url }}/{{ resourse }}","_type":"request"},{"_id":"req_a6ffa50edd564839a934fcc4f380fcbf","authentication":{},"body":{"mimeType":"application/json","text":"{\n\t\"id\": \"208df53b-0b09-42de-9d0c-51d96ba1db06\",\n\t\"name\": \"Calças\",\n\t\"description\": \"Aqui você encontra uma variedade incrível de calças\"\n}"},"created":1605099172150,"description":"","headers":[{"id":"pair_4c63f7aa1aff4584863cb6c077aa0012","name":"Content-Type","value":"application/json"}],"isPrivate":false,"metaSortKey":-1605041890719.625,"method":"PUT","modified":1605099306537,"name":"UpdateCategory","parameters":[],"parentId":"fld_529905423ae34e41a5a9e7301696a436","settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingFollowRedirects":"global","settingRebuildPath":true,"settingSendCookies":true,"settingStoreCookies":true,"url":"{{ base_url }}/{{ resourse }}","_type":"request"},{"_id":"req_227cc1a8ed5a46f48621029d9dcdaaca","authentication":{},"body":{"mimeType":"multipart/form-data","params":[{"description":"","id":"pair_5c8f1acd4b834195bd0c09da2d212adb","name":"category_id","value":"1ba9f69f-87b9-40fd-9235-94fc09925c10"},{"description":"","fileName":"C:\\Users\\Misael\\Pictures\\perfil_2019_quadrado.jpg","id":"pair_44f3da02d3504c14b7ef510a59789cc7","name":"image","type":"file","value":""}]},"created":1605103944672,"description":"","headers":[{"id":"pair_ee780442f8274bce876830a11c8fa6c1","name":"Content-Type","value":"multipart/form-data"}],"isPrivate":false,"metaSortKey":-1605041890669.625,"method":"PATCH","modified":1605104579991,"name":"UpdateProductCategoryImage","parameters":[],"parentId":"fld_529905423ae34e41a5a9e7301696a436","settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingFollowRedirects":"global","settingRebuildPath":true,"settingSendCookies":true,"settingStoreCookies":true,"url":"{{ base_url }}/{{ resourse }}/image","_type":"request"},{"_id":"req_99452d806dbf4f728644016a3ee3e5e3","authentication":{},"body":{},"created":1605309496801,"description":"","headers":[],"isPrivate":false,"metaSortKey":-1605309496801,"method":"GET","modified":1605309762669,"name":"ListProductsByLookId","parameters":[],"parentId":"fld_76b2f5b78cd145578d73930ca06370d7","settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingFollowRedirects":"global","settingRebuildPath":true,"settingSendCookies":true,"settingStoreCookies":true,"url":"{{ base_url }}/{{ resource }}/look/product/f55fd2f1-83df-43c5-932a-13b113185b8c","_type":"request"},{"_id":"fld_76b2f5b78cd145578d73930ca06370d7","created":1605055766252,"description":"","environment":{"resource":"products"},"environmentPropertyOrder":{"&":["resource"]},"metaSortKey":-1605055766252,"modified":1605055842385,"name":"Products","parentId":"wrk_f10063a658f84b6997fb8238087961c4","_type":"request_group"},{"_id":"req_631511ba2a6b415d98376f102cf1bbaf","authentication":{},"body":{"mimeType":"application/json","text":"{\n\t\"product_id\": \"f55fd2f1-83df-43c5-932a-13b113185b8c\",\n\t\"look_styles_id\": \"139d7a14-d764-4340-b778-e84953040420\"\n}"},"created":1605292379536,"description":"","headers":[{"id":"pair_5cd564958a6d48abb9a134b3a4e3cfd9","name":"Content-Type","value":"application/json"}],"isPrivate":false,"metaSortKey":-1605292379536,"method":"POST","modified":1605310778050,"name":"CreateProductLookStyle","parameters":[],"parentId":"fld_76b2f5b78cd145578d73930ca06370d7","settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingFollowRedirects":"global","settingRebuildPath":true,"settingSendCookies":true,"settingStoreCookies":true,"url":"{{ base_url }}/{{ resource }}/look","_type":"request"},{"_id":"req_15f1aad1750c47e787390e80aec5685e","authentication":{},"body":{},"created":1605294107312,"description":"","headers":[],"isPrivate":false,"metaSortKey":-1605291964843.5,"method":"GET","modified":1605294123398,"name":"ListProductsByLookId","parameters":[],"parentId":"fld_76b2f5b78cd145578d73930ca06370d7","settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingFollowRedirects":"global","settingRebuildPath":true,"settingSendCookies":true,"settingStoreCookies":true,"url":"{{ base_url }}/{{ resource }}/look/bcd53984-4414-4a01-ba6a-8ea33c2a8427","_type":"request"},{"_id":"req_15545dffcbbd44bdbfe44f06f17feb9e","authentication":{},"body":{},"created":1605055858898,"description":"","headers":[],"isPrivate":false,"metaSortKey":-1605037252632.5,"method":"GET","modified":1605056627348,"name":"ListProducts","parameters":[],"parentId":"fld_76b2f5b78cd145578d73930ca06370d7","settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingFollowRedirects":"global","settingRebuildPath":true,"settingSendCookies":true,"settingStoreCookies":true,"url":"{{ base_url }}/{{ resource }}","_type":"request"},{"_id":"req_c471bce07ffe46a6bf855206baf9c4e3","authentication":{},"body":{},"created":1605064020041,"description":"","headers":[],"isPrivate":false,"metaSortKey":-1605034933588.9375,"method":"GET","modified":1605065780141,"name":"ListProductsByCat","parameters":[],"parentId":"fld_76b2f5b78cd145578d73930ca06370d7","settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingFollowRedirects":"global","settingRebuildPath":true,"settingSendCookies":true,"settingStoreCookies":true,"url":"{{ base_url }}/{{ resource }}/cat/Bermudas","_type":"request"},{"_id":"req_82348bfa2ac94d3791992de65377fea3","authentication":{},"body":{},"created":1605121842857,"description":"","headers":[],"isPrivate":false,"metaSortKey":-1605033774067.1562,"method":"GET","modified":1605121912980,"name":"ListProductsByCatAndGender","parameters":[],"parentId":"fld_76b2f5b78cd145578d73930ca06370d7","settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingFollowRedirects":"global","settingRebuildPath":true,"settingSendCookies":true,"settingStoreCookies":true,"url":"{{ base_url }}/{{ resource }}/cat/Calças/Masculina","_type":"request"},{"_id":"req_054b945ecd5f442581a7e4f2c1a6b4e1","authentication":{},"body":{},"created":1605123501267,"description":"","headers":[],"isPrivate":false,"metaSortKey":-1605033194306.2656,"method":"GET","modified":1605124453431,"name":"ListProductsByGender","parameters":[],"parentId":"fld_76b2f5b78cd145578d73930ca06370d7","settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingFollowRedirects":"global","settingRebuildPath":true,"settingSendCookies":true,"settingStoreCookies":true,"url":"{{ base_url }}/{{ resource }}/gender/Masculina","_type":"request"},{"_id":"req_0ac46f6395794aa99e17a7f0e09833dc","authentication":{},"body":{},"created":1605059236936,"description":"","headers":[],"isPrivate":false,"metaSortKey":-1605032614545.375,"method":"GET","modified":1605059398005,"name":"ListProductsById","parameters":[],"parentId":"fld_76b2f5b78cd145578d73930ca06370d7","settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingFollowRedirects":"global","settingRebuildPath":true,"settingSendCookies":true,"settingStoreCookies":true,"url":"{{ base_url }}/{{ resource }}/738becef-2081-4882-967c-da4be127beb0","_type":"request"},{"_id":"req_19d0a30247ca43298fa26293088ae2a5","authentication":{},"body":{"mimeType":"application/json","text":"{\n\t\"name\": \"Calça social\",\n\t\"color\": \"preta\",\n\t\"size\": \"40\",\n\t\"price\": 200.00,\n\t\"quantity\": 10,\n\t\"brand\": \"Tevah\",\n\t\"description\": \"Calça para eventos sociais\",\n\t\"gender\": \"Masculina\",\n\t\"category_id\": \"208df53b-0b09-42de-9d0c-51d96ba1db06\" \n\t\n}"},"created":1605056641557,"description":"","headers":[{"id":"pair_ee780442f8274bce876830a11c8fa6c1","name":"Content-Type","value":"application/json"}],"isPrivate":false,"metaSortKey":-1605027976458.25,"method":"POST","modified":1605316943624,"name":"CreateProduct","parameters":[],"parentId":"fld_76b2f5b78cd145578d73930ca06370d7","settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingFollowRedirects":"global","settingRebuildPath":true,"settingSendCookies":true,"settingStoreCookies":true,"url":"{{ base_url }}/{{ resource }}","_type":"request"},{"_id":"req_e2beb7be5dbe402b943103a57cf163be","authentication":{},"body":{"mimeType":"application/json","text":"{\n\t\"id\": \"738becef-2081-4882-967c-da4be127beb0\",\n\t\"name\": \"Calça floreada\",\n\t\"color\": \"azul\",\n\t\"size\": \"40\",\n\t\"price\": 220.00,\n\t\"brand\": \"Tevah\",\n\t\"description\": \"Calça para eventos festivos\",\n\t\"gender\": \"Masculina\",\n\t\"category_id\": \"1ba9f69f-87b9-40fd-9235-94fc09925c10\" \t\n}"},"created":1605065753513,"description":"","headers":[{"id":"pair_ee780442f8274bce876830a11c8fa6c1","name":"Content-Type","value":"application/json"}],"isPrivate":false,"metaSortKey":-1605023338371.125,"method":"PUT","modified":1605094859869,"name":"UpdateProduct","parameters":[],"parentId":"fld_76b2f5b78cd145578d73930ca06370d7","settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingFollowRedirects":"global","settingRebuildPath":true,"settingSendCookies":true,"settingStoreCookies":true,"url":"{{ base_url }}/{{ resource }}","_type":"request"},{"_id":"req_327da578144644b68203a23d54598ea6","authentication":{},"body":{"mimeType":"multipart/form-data","params":[{"description":"","id":"pair_5c8f1acd4b834195bd0c09da2d212adb","name":"product_id","value":"d1edfb3f-f5a3-42d2-ad31-792a577cc15c"},{"description":"","fileName":"C:\\Users\\Misael\\Pictures\\chimarrão.jpg","id":"pair_44f3da02d3504c14b7ef510a59789cc7","name":"image","type":"file","value":""}]},"created":1605101689126,"description":"","headers":[{"id":"pair_ee780442f8274bce876830a11c8fa6c1","name":"Content-Type","value":"multipart/form-data"}],"isPrivate":false,"metaSortKey":-1605021019327.5625,"method":"PATCH","modified":1605104643948,"name":"UpdateProductImage","parameters":[],"parentId":"fld_76b2f5b78cd145578d73930ca06370d7","settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingFollowRedirects":"global","settingRebuildPath":true,"settingSendCookies":true,"settingStoreCookies":true,"url":"{{ base_url }}/{{ resource }}/image","_type":"request"},{"_id":"req_0ba8b27582784596be8c670da55b8f8b","authentication":{"token":"","type":"bearer"},"body":{"mimeType":"application/json","text":"{\n\t\"email\": \"misael.bandeira@gmail.com\",\n\t\"password\": \"123456\"\n}"},"created":1605016812878,"description":"","headers":[{"id":"pair_e6fba19e09f7491f9978ad3d1a5ce4c5","name":"Content-Type","value":"application/json"}],"isPrivate":false,"metaSortKey":-1605016812878,"method":"POST","modified":1605017964430,"name":"Authenticate","parameters":[],"parentId":"fld_0bc7d1c0e2cc43e9ba992e95c9ac010c","settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingFollowRedirects":"global","settingRebuildPath":true,"settingSendCookies":true,"settingStoreCookies":true,"url":"{{ base_url }}/sessions","_type":"request"},{"_id":"fld_0bc7d1c0e2cc43e9ba992e95c9ac010c","created":1605016748926,"description":"","environment":{},"environmentPropertyOrder":null,"metaSortKey":-1605016748926,"modified":1605016748926,"name":"Authenticate","parentId":"wrk_f10063a658f84b6997fb8238087961c4","_type":"request_group"},{"_id":"req_6af18a8399754d3dabe61d633cebccbf","authentication":{"token":"{% response 'body', 'req_0ba8b27582784596be8c670da55b8f8b', 'b64::JC50b2tlbg==::46b', 'no-history', 60 %}","type":"bearer"},"body":{"mimeType":"multipart/form-data","params":[{"description":"","fileName":"C:\\Users\\Misael\\Pictures\\perfil_2019_quadrado.jpg","id":"pair_7945f8af9f444ec592d7ee9e702281b2","name":"avatar","type":"file","value":""}]},"created":1605018700284,"description":"","headers":[{"id":"pair_e4e05f1c9d624de7a61ce4d970dd99c5","name":"Content-Type","value":"multipart/form-data"}],"isPrivate":false,"metaSortKey":-1605018700284,"method":"PATCH","modified":1605018805169,"name":"UpdateAvatar","parameters":[],"parentId":"fld_545e0aac40eb437e8475acf1042d63bb","settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingFollowRedirects":"global","settingRebuildPath":true,"settingSendCookies":true,"settingStoreCookies":true,"url":"{{ base_url }}/{{ resourse }}/avatar","_type":"request"},{"_id":"fld_545e0aac40eb437e8475acf1042d63bb","created":1604955924399,"description":"","environment":{"resourse":"users"},"environmentPropertyOrder":{"&":["resourse"]},"metaSortKey":-1604955924399,"modified":1605018343582,"name":"Users","parentId":"wrk_f10063a658f84b6997fb8238087961c4","_type":"request_group"},{"_id":"req_2796235d82c74a20bb067a9d0dc8f9f9","authentication":{"token":"{% response 'body', 'req_0ba8b27582784596be8c670da55b8f8b', 'b64::JC50b2tlbg==::46b', 'no-history', 60 %}","type":"bearer"},"body":{"mimeType":"application/json","text":"{\n\t\"password\": \"123456\",\n\t\"password_confirmation\": \"123456\",\n\t\"token\": \"ac7e2ecb-60f0-4254-83ea-15451a80c4c6\"\n}"},"created":1605018402484,"description":"","headers":[{"id":"pair_7be27cfbd5a94961bc2cf2bd49800f79","name":"Content-Type","value":"application/json"}],"isPrivate":false,"metaSortKey":-1604955936837,"method":"POST","modified":1605124631289,"name":"Reset Password","parameters":[],"parentId":"fld_9f171f05a3c84331966e753e768e6d39","settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingFollowRedirects":"global","settingRebuildPath":true,"settingSendCookies":true,"settingStoreCookies":true,"url":"{{ base_url }}/{{ resourse }}/reset","_type":"request"},{"_id":"fld_9f171f05a3c84331966e753e768e6d39","created":1605018402454,"description":"","environment":{"resourse":"password"},"environmentPropertyOrder":{"&":["resourse"]},"metaSortKey":-1604955936887,"modified":1605018415427,"name":"Password","parentId":"fld_545e0aac40eb437e8475acf1042d63bb","_type":"request_group"},{"_id":"req_5aabb6692afb42be9dd927f379a4ae24","authentication":{},"body":{"mimeType":"application/json","text":"{\n\t\"email\": \"misael.bandeira@gmail.com\"\n}"},"created":1605018402529,"description":"","headers":[{"id":"pair_a095ea78144749708618debc202cb7ba","name":"Content-Type","value":"application/json"}],"isPrivate":false,"metaSortKey":-1601329922484.5,"method":"POST","modified":1605124539326,"name":"Forgot","parameters":[],"parentId":"fld_9f171f05a3c84331966e753e768e6d39","settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingFollowRedirects":"global","settingRebuildPath":true,"settingSendCookies":true,"settingStoreCookies":true,"url":"{{ base_url }}/{{ resourse }}/forgot","_type":"request"},{"_id":"req_2de011fa10c342b5812281d74bd3a808","authentication":{"token":"{% response 'body', 'req_0ba8b27582784596be8c670da55b8f8b', 'b64::JC50b2tlbg==::46b', 'no-history', 60 %}","type":"bearer"},"body":{},"created":1604955936837,"description":"","headers":[],"isPrivate":false,"metaSortKey":-1604955936837,"method":"GET","modified":1605018376834,"name":"ListUsers","parameters":[],"parentId":"fld_545e0aac40eb437e8475acf1042d63bb","settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingFollowRedirects":"global","settingRebuildPath":true,"settingSendCookies":true,"settingStoreCookies":true,"url":"{{ base_url }}/{{ resourse }}","_type":"request"},{"_id":"req_f4ecb83dd6654ccb83a2b96c2588a85d","authentication":{"token":"{% response 'body', 'req_0ba8b27582784596be8c670da55b8f8b', 'b64::JC50b2tlbg==::46b', 'no-history', 60 %}","type":"bearer"},"body":{},"created":1605018602700,"description":"","headers":[],"isPrivate":false,"metaSortKey":-1603142929660.75,"method":"GET","modified":1605105805352,"name":"ShowProfile","parameters":[],"parentId":"fld_545e0aac40eb437e8475acf1042d63bb","settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingFollowRedirects":"global","settingRebuildPath":true,"settingSendCookies":true,"settingStoreCookies":true,"url":"{{ base_url }}/profile","_type":"request"},{"_id":"req_64ab318147e74d0fbd84879a627e29cc","authentication":{"token":"{% response 'body', 'req_0ba8b27582784596be8c670da55b8f8b', 'b64::JC50b2tlbg==::46b', 'no-history', 60 %}","type":"bearer"},"body":{},"created":1605146387820,"description":"","headers":[],"isPrivate":false,"metaSortKey":-1602689677866.6875,"method":"GET","modified":1605146397994,"name":"ShowProfilePreferences","parameters":[],"parentId":"fld_545e0aac40eb437e8475acf1042d63bb","settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingFollowRedirects":"global","settingRebuildPath":true,"settingSendCookies":true,"settingStoreCookies":true,"url":"{{ base_url }}/profile/preferences","_type":"request"},{"_id":"req_896de7c1d62d4ecda27730fe6f6f06e7","authentication":{"token":"{% response 'body', 'req_0ba8b27582784596be8c670da55b8f8b', 'b64::JC50b2tlbg==::46b', 'no-history', 60 %}","type":"bearer"},"body":{"mimeType":"application/json","text":"{\n\t\"name\" : \"Misael Bandeira Silveira\",\n\t\"email\": \"misaelbandeira@gmail.com\",\n\t\"old_password\": \"123456\",\n\t\"password\": \"123456\",\n\t\"password_confirmation\":\"123456\",\n\t\"gender\": \"male\"\n\t\n}"},"created":1605020465003,"description":"","headers":[{"id":"pair_afead2f54a3c44d0afc3670e30b0a28b","name":"Content-Type","value":"application/json"}],"isPrivate":false,"metaSortKey":-1602236426072.625,"method":"PUT","modified":1605020605598,"name":"UpdateProfile","parameters":[],"parentId":"fld_545e0aac40eb437e8475acf1042d63bb","settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingFollowRedirects":"global","settingRebuildPath":true,"settingSendCookies":true,"settingStoreCookies":true,"url":"{{ base_url }}/profile","_type":"request"},{"_id":"req_80bfb40e9de742d9ab118ade064f5006","authentication":{},"body":{"mimeType":"application/json","text":"{\n\t\"name\": \"Misael Bandeira Silveira\",\n\t\"email\": \"misael.bandeira@gmail.com\",\n\t\"password\": \"123456\"\n}"},"created":1604957678519,"description":"","headers":[{"id":"pair_a095ea78144749708618debc202cb7ba","name":"Content-Type","value":"application/json"}],"isPrivate":false,"metaSortKey":-1601329922484.5,"method":"POST","modified":1605057601481,"name":"CreateUser","parameters":[],"parentId":"fld_545e0aac40eb437e8475acf1042d63bb","settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingFollowRedirects":"global","settingRebuildPath":true,"settingSendCookies":true,"settingStoreCookies":true,"url":"{{ base_url }}/{{ resourse }}/","_type":"request"},{"_id":"env_a56a4434d4bfedcb4119282fd06cae9f533226b2","color":null,"created":1604955798740,"data":{},"dataPropertyOrder":{},"isPrivate":false,"metaSortKey":1604955798740,"modified":1604955910658,"name":"Base Environment","parentId":"wrk_f10063a658f84b6997fb8238087961c4","_type":"environment"},{"_id":"jar_a56a4434d4bfedcb4119282fd06cae9f533226b2","cookies":[],"created":1604955798743,"modified":1604955798743,"name":"Default Jar","parentId":"wrk_f10063a658f84b6997fb8238087961c4","_type":"cookie_jar"},{"_id":"spc_533d1f1e065845d9b471f84a47fa0d7f","contentType":"yaml","contents":"","created":1604955798523,"fileName":"Linker","modified":1604955798523,"parentId":"wrk_f10063a658f84b6997fb8238087961c4","_type":"api_spec"},{"_id":"env_65ee187c15044a80a9f64d45e368b1a0","color":"#400080","created":1604955881534,"data":{"base_url":"localhost:3333"},"dataPropertyOrder":{"&":["base_url"]},"isPrivate":false,"metaSortKey":1604955881534,"modified":1604955914515,"name":"Dev","parentId":"env_a56a4434d4bfedcb4119282fd06cae9f533226b2","_type":"environment"}]}
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2020-11-14T02:07:16.253Z",
+  "__export_source": "insomnia.desktop.app:v2020.3.3",
+  "resources": [
+    {
+      "_id": "req_b7dca3f8b3634f60b061252c258416d7",
+      "authentication": {},
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n \"name\": \"Primavera\",\n\t\"description\": \"Primavera é um look que combina roupas leves e curtas\"\n}"
+      },
+      "created": 1605291550151,
+      "description": "",
+      "headers": [
+        {
+          "id": "pair_0892d782c013426fb2c062cf61d9f4e3",
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1605291550151,
+      "method": "POST",
+      "modified": 1605310344096,
+      "name": "CreateLook",
+      "parameters": [],
+      "parentId": "fld_c370b54cb6c34c42b369ba8a16a02660",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ base_url }}/{{ resourse }}",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_c370b54cb6c34c42b369ba8a16a02660",
+      "created": 1605291532150,
+      "description": "",
+      "environment": { "resourse": "looks" },
+      "environmentPropertyOrder": { "&": ["resourse"] },
+      "metaSortKey": -1605291532150,
+      "modified": 1605291601241,
+      "name": "Looks",
+      "parentId": "wrk_f10063a658f84b6997fb8238087961c4",
+      "_type": "request_group"
+    },
+    {
+      "_id": "wrk_f10063a658f84b6997fb8238087961c4",
+      "created": 1604955798492,
+      "description": "",
+      "modified": 1604955798492,
+      "name": "Linker",
+      "parentId": null,
+      "scope": null,
+      "_type": "workspace"
+    },
+    {
+      "_id": "req_bc40db086caf4c319357a621a7ee3d15",
+      "authentication": {},
+      "body": {},
+      "created": 1605291718419,
+      "description": "",
+      "headers": [],
+      "isPrivate": false,
+      "metaSortKey": -1605173677566,
+      "method": "GET",
+      "modified": 1605291736288,
+      "name": "ListLooks",
+      "parameters": [],
+      "parentId": "fld_c370b54cb6c34c42b369ba8a16a02660",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ base_url }}/{{ resourse }}",
+      "_type": "request"
+    },
+    {
+      "_id": "req_6ef60826be93454597956852a4e0bf8e",
+      "authentication": {},
+      "body": {},
+      "created": 1605055804981,
+      "description": "",
+      "headers": [],
+      "isPrivate": false,
+      "metaSortKey": -1605055804981,
+      "method": "GET",
+      "modified": 1605055876419,
+      "name": "ListCategories",
+      "parameters": [],
+      "parentId": "fld_529905423ae34e41a5a9e7301696a436",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ base_url }}/{{ resourse }}",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_529905423ae34e41a5a9e7301696a436",
+      "created": 1605055777969,
+      "description": "",
+      "environment": { "resourse": "category" },
+      "environmentPropertyOrder": { "&": ["resourse"] },
+      "metaSortKey": -1605055777969,
+      "modified": 1605055822984,
+      "name": "ProductsCategory",
+      "parentId": "wrk_f10063a658f84b6997fb8238087961c4",
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_f35e078f398e48b1adbc28ae66f59a5b",
+      "authentication": {},
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"name\": \"Calças\",\n\t\"description\": \"Aqui você encontra uma variedade incrível de calças\"\n}"
+      },
+      "created": 1605055886344,
+      "description": "",
+      "headers": [
+        {
+          "id": "pair_4c63f7aa1aff4584863cb6c077aa0012",
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1605046528806.75,
+      "method": "POST",
+      "modified": 1605057722547,
+      "name": "CreateCategory",
+      "parameters": [],
+      "parentId": "fld_529905423ae34e41a5a9e7301696a436",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ base_url }}/{{ resourse }}",
+      "_type": "request"
+    },
+    {
+      "_id": "req_a6ffa50edd564839a934fcc4f380fcbf",
+      "authentication": {},
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"id\": \"208df53b-0b09-42de-9d0c-51d96ba1db06\",\n\t\"name\": \"Calças\",\n\t\"description\": \"Aqui você encontra uma variedade incrível de calças\"\n}"
+      },
+      "created": 1605099172150,
+      "description": "",
+      "headers": [
+        {
+          "id": "pair_4c63f7aa1aff4584863cb6c077aa0012",
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1605041890719.625,
+      "method": "PUT",
+      "modified": 1605099306537,
+      "name": "UpdateCategory",
+      "parameters": [],
+      "parentId": "fld_529905423ae34e41a5a9e7301696a436",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ base_url }}/{{ resourse }}",
+      "_type": "request"
+    },
+    {
+      "_id": "req_227cc1a8ed5a46f48621029d9dcdaaca",
+      "authentication": {},
+      "body": {
+        "mimeType": "multipart/form-data",
+        "params": [
+          {
+            "description": "",
+            "id": "pair_5c8f1acd4b834195bd0c09da2d212adb",
+            "name": "category_id",
+            "value": "1ba9f69f-87b9-40fd-9235-94fc09925c10"
+          },
+          {
+            "description": "",
+            "fileName": "C:\\Users\\Misael\\Pictures\\perfil_2019_quadrado.jpg",
+            "id": "pair_44f3da02d3504c14b7ef510a59789cc7",
+            "name": "image",
+            "type": "file",
+            "value": ""
+          }
+        ]
+      },
+      "created": 1605103944672,
+      "description": "",
+      "headers": [
+        {
+          "id": "pair_ee780442f8274bce876830a11c8fa6c1",
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1605041890669.625,
+      "method": "PATCH",
+      "modified": 1605104579991,
+      "name": "UpdateProductCategoryImage",
+      "parameters": [],
+      "parentId": "fld_529905423ae34e41a5a9e7301696a436",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ base_url }}/{{ resourse }}/image",
+      "_type": "request"
+    },
+    {
+      "_id": "req_99452d806dbf4f728644016a3ee3e5e3",
+      "authentication": {},
+      "body": {},
+      "created": 1605309496801,
+      "description": "",
+      "headers": [],
+      "isPrivate": false,
+      "metaSortKey": -1605309496801,
+      "method": "GET",
+      "modified": 1605309762669,
+      "name": "ListProductsByLookId",
+      "parameters": [],
+      "parentId": "fld_76b2f5b78cd145578d73930ca06370d7",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ base_url }}/{{ resource }}/look/product/f55fd2f1-83df-43c5-932a-13b113185b8c",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_76b2f5b78cd145578d73930ca06370d7",
+      "created": 1605055766252,
+      "description": "",
+      "environment": { "resource": "products" },
+      "environmentPropertyOrder": { "&": ["resource"] },
+      "metaSortKey": -1605055766252,
+      "modified": 1605055842385,
+      "name": "Products",
+      "parentId": "wrk_f10063a658f84b6997fb8238087961c4",
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_631511ba2a6b415d98376f102cf1bbaf",
+      "authentication": {},
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"product_id\": \"f55fd2f1-83df-43c5-932a-13b113185b8c\",\n\t\"look_styles_id\": \"139d7a14-d764-4340-b778-e84953040420\"\n}"
+      },
+      "created": 1605292379536,
+      "description": "",
+      "headers": [
+        {
+          "id": "pair_5cd564958a6d48abb9a134b3a4e3cfd9",
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1605292379536,
+      "method": "POST",
+      "modified": 1605310778050,
+      "name": "CreateProductLookStyle",
+      "parameters": [],
+      "parentId": "fld_76b2f5b78cd145578d73930ca06370d7",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ base_url }}/{{ resource }}/look",
+      "_type": "request"
+    },
+    {
+      "_id": "req_15f1aad1750c47e787390e80aec5685e",
+      "authentication": {},
+      "body": {},
+      "created": 1605294107312,
+      "description": "",
+      "headers": [],
+      "isPrivate": false,
+      "metaSortKey": -1605291964843.5,
+      "method": "GET",
+      "modified": 1605294123398,
+      "name": "ListProductsByLookId",
+      "parameters": [],
+      "parentId": "fld_76b2f5b78cd145578d73930ca06370d7",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ base_url }}/{{ resource }}/look/bcd53984-4414-4a01-ba6a-8ea33c2a8427",
+      "_type": "request"
+    },
+    {
+      "_id": "req_15545dffcbbd44bdbfe44f06f17feb9e",
+      "authentication": {},
+      "body": {},
+      "created": 1605055858898,
+      "description": "",
+      "headers": [],
+      "isPrivate": false,
+      "metaSortKey": -1605037252632.5,
+      "method": "GET",
+      "modified": 1605056627348,
+      "name": "ListProducts",
+      "parameters": [],
+      "parentId": "fld_76b2f5b78cd145578d73930ca06370d7",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ base_url }}/{{ resource }}",
+      "_type": "request"
+    },
+    {
+      "_id": "req_c471bce07ffe46a6bf855206baf9c4e3",
+      "authentication": {},
+      "body": {},
+      "created": 1605064020041,
+      "description": "",
+      "headers": [],
+      "isPrivate": false,
+      "metaSortKey": -1605034933588.9375,
+      "method": "GET",
+      "modified": 1605065780141,
+      "name": "ListProductsByCat",
+      "parameters": [],
+      "parentId": "fld_76b2f5b78cd145578d73930ca06370d7",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ base_url }}/{{ resource }}/cat/Bermudas",
+      "_type": "request"
+    },
+    {
+      "_id": "req_82348bfa2ac94d3791992de65377fea3",
+      "authentication": {},
+      "body": {},
+      "created": 1605121842857,
+      "description": "",
+      "headers": [],
+      "isPrivate": false,
+      "metaSortKey": -1605033774067.1562,
+      "method": "GET",
+      "modified": 1605121912980,
+      "name": "ListProductsByCatAndGender",
+      "parameters": [],
+      "parentId": "fld_76b2f5b78cd145578d73930ca06370d7",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ base_url }}/{{ resource }}/cat/Calças/Masculina",
+      "_type": "request"
+    },
+    {
+      "_id": "req_054b945ecd5f442581a7e4f2c1a6b4e1",
+      "authentication": {},
+      "body": {},
+      "created": 1605123501267,
+      "description": "",
+      "headers": [],
+      "isPrivate": false,
+      "metaSortKey": -1605033194306.2656,
+      "method": "GET",
+      "modified": 1605124453431,
+      "name": "ListProductsByGender",
+      "parameters": [],
+      "parentId": "fld_76b2f5b78cd145578d73930ca06370d7",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ base_url }}/{{ resource }}/gender/Masculina",
+      "_type": "request"
+    },
+    {
+      "_id": "req_0ac46f6395794aa99e17a7f0e09833dc",
+      "authentication": {},
+      "body": {},
+      "created": 1605059236936,
+      "description": "",
+      "headers": [],
+      "isPrivate": false,
+      "metaSortKey": -1605032614545.375,
+      "method": "GET",
+      "modified": 1605059398005,
+      "name": "ListProductsById",
+      "parameters": [],
+      "parentId": "fld_76b2f5b78cd145578d73930ca06370d7",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ base_url }}/{{ resource }}/738becef-2081-4882-967c-da4be127beb0",
+      "_type": "request"
+    },
+    {
+      "_id": "req_19d0a30247ca43298fa26293088ae2a5",
+      "authentication": {},
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"name\": \"Calça social\",\n\t\"color\": \"preta\",\n\t\"size\": \"40\",\n\t\"price\": 200.00,\n\t\"quantity\": 10,\n\t\"brand\": \"Tevah\",\n\t\"description\": \"Calça para eventos sociais\",\n\t\"gender\": \"Masculina\",\n\t\"category_id\": \"208df53b-0b09-42de-9d0c-51d96ba1db06\" \n\t\n}"
+      },
+      "created": 1605056641557,
+      "description": "",
+      "headers": [
+        {
+          "id": "pair_ee780442f8274bce876830a11c8fa6c1",
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1605027976458.25,
+      "method": "POST",
+      "modified": 1605316943624,
+      "name": "CreateProduct",
+      "parameters": [],
+      "parentId": "fld_76b2f5b78cd145578d73930ca06370d7",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ base_url }}/{{ resource }}",
+      "_type": "request"
+    },
+    {
+      "_id": "req_e2beb7be5dbe402b943103a57cf163be",
+      "authentication": {},
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"id\": \"738becef-2081-4882-967c-da4be127beb0\",\n\t\"name\": \"Calça floreada\",\n\t\"color\": \"azul\",\n\t\"size\": \"40\",\n\t\"price\": 220.00,\n\t\"brand\": \"Tevah\",\n\t\"description\": \"Calça para eventos festivos\",\n\t\"gender\": \"Masculina\",\n\t\"category_id\": \"1ba9f69f-87b9-40fd-9235-94fc09925c10\" \t\n}"
+      },
+      "created": 1605065753513,
+      "description": "",
+      "headers": [
+        {
+          "id": "pair_ee780442f8274bce876830a11c8fa6c1",
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1605023338371.125,
+      "method": "PUT",
+      "modified": 1605094859869,
+      "name": "UpdateProduct",
+      "parameters": [],
+      "parentId": "fld_76b2f5b78cd145578d73930ca06370d7",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ base_url }}/{{ resource }}",
+      "_type": "request"
+    },
+    {
+      "_id": "req_327da578144644b68203a23d54598ea6",
+      "authentication": {},
+      "body": {
+        "mimeType": "multipart/form-data",
+        "params": [
+          {
+            "description": "",
+            "id": "pair_5c8f1acd4b834195bd0c09da2d212adb",
+            "name": "product_id",
+            "value": "d1edfb3f-f5a3-42d2-ad31-792a577cc15c"
+          },
+          {
+            "description": "",
+            "fileName": "C:\\Users\\Misael\\Pictures\\chimarrão.jpg",
+            "id": "pair_44f3da02d3504c14b7ef510a59789cc7",
+            "name": "image",
+            "type": "file",
+            "value": ""
+          }
+        ]
+      },
+      "created": 1605101689126,
+      "description": "",
+      "headers": [
+        {
+          "id": "pair_ee780442f8274bce876830a11c8fa6c1",
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1605021019327.5625,
+      "method": "PATCH",
+      "modified": 1605104643948,
+      "name": "UpdateProductImage",
+      "parameters": [],
+      "parentId": "fld_76b2f5b78cd145578d73930ca06370d7",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ base_url }}/{{ resource }}/image",
+      "_type": "request"
+    },
+    {
+      "_id": "req_0ba8b27582784596be8c670da55b8f8b",
+      "authentication": { "token": "", "type": "bearer" },
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"email\": \"misael.bandeira@gmail.com\",\n\t\"password\": \"123456\"\n}"
+      },
+      "created": 1605016812878,
+      "description": "",
+      "headers": [
+        {
+          "id": "pair_e6fba19e09f7491f9978ad3d1a5ce4c5",
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1605016812878,
+      "method": "POST",
+      "modified": 1605017964430,
+      "name": "Authenticate",
+      "parameters": [],
+      "parentId": "fld_0bc7d1c0e2cc43e9ba992e95c9ac010c",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ base_url }}/sessions",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_0bc7d1c0e2cc43e9ba992e95c9ac010c",
+      "created": 1605016748926,
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1605016748926,
+      "modified": 1605016748926,
+      "name": "Authenticate",
+      "parentId": "wrk_f10063a658f84b6997fb8238087961c4",
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_6af18a8399754d3dabe61d633cebccbf",
+      "authentication": {
+        "token": "{% response 'body', 'req_0ba8b27582784596be8c670da55b8f8b', 'b64::JC50b2tlbg==::46b', 'no-history', 60 %}",
+        "type": "bearer"
+      },
+      "body": {
+        "mimeType": "multipart/form-data",
+        "params": [
+          {
+            "description": "",
+            "fileName": "C:\\Users\\Misael\\Pictures\\perfil_2019_quadrado.jpg",
+            "id": "pair_7945f8af9f444ec592d7ee9e702281b2",
+            "name": "avatar",
+            "type": "file",
+            "value": ""
+          }
+        ]
+      },
+      "created": 1605018700284,
+      "description": "",
+      "headers": [
+        {
+          "id": "pair_e4e05f1c9d624de7a61ce4d970dd99c5",
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1605018700284,
+      "method": "PATCH",
+      "modified": 1605018805169,
+      "name": "UpdateAvatar",
+      "parameters": [],
+      "parentId": "fld_545e0aac40eb437e8475acf1042d63bb",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ base_url }}/{{ resourse }}/avatar",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_545e0aac40eb437e8475acf1042d63bb",
+      "created": 1604955924399,
+      "description": "",
+      "environment": { "resourse": "users" },
+      "environmentPropertyOrder": { "&": ["resourse"] },
+      "metaSortKey": -1604955924399,
+      "modified": 1605018343582,
+      "name": "Users",
+      "parentId": "wrk_f10063a658f84b6997fb8238087961c4",
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_2796235d82c74a20bb067a9d0dc8f9f9",
+      "authentication": {
+        "token": "{% response 'body', 'req_0ba8b27582784596be8c670da55b8f8b', 'b64::JC50b2tlbg==::46b', 'no-history', 60 %}",
+        "type": "bearer"
+      },
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"password\": \"123456\",\n\t\"password_confirmation\": \"123456\",\n\t\"token\": \"ac7e2ecb-60f0-4254-83ea-15451a80c4c6\"\n}"
+      },
+      "created": 1605018402484,
+      "description": "",
+      "headers": [
+        {
+          "id": "pair_7be27cfbd5a94961bc2cf2bd49800f79",
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1604955936837,
+      "method": "POST",
+      "modified": 1605124631289,
+      "name": "Reset Password",
+      "parameters": [],
+      "parentId": "fld_9f171f05a3c84331966e753e768e6d39",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ base_url }}/{{ resourse }}/reset",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_9f171f05a3c84331966e753e768e6d39",
+      "created": 1605018402454,
+      "description": "",
+      "environment": { "resourse": "password" },
+      "environmentPropertyOrder": { "&": ["resourse"] },
+      "metaSortKey": -1604955936887,
+      "modified": 1605018415427,
+      "name": "Password",
+      "parentId": "fld_545e0aac40eb437e8475acf1042d63bb",
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_5aabb6692afb42be9dd927f379a4ae24",
+      "authentication": {},
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"email\": \"misael.bandeira@gmail.com\"\n}"
+      },
+      "created": 1605018402529,
+      "description": "",
+      "headers": [
+        {
+          "id": "pair_a095ea78144749708618debc202cb7ba",
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1601329922484.5,
+      "method": "POST",
+      "modified": 1605124539326,
+      "name": "Forgot",
+      "parameters": [],
+      "parentId": "fld_9f171f05a3c84331966e753e768e6d39",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ base_url }}/{{ resourse }}/forgot",
+      "_type": "request"
+    },
+    {
+      "_id": "req_2de011fa10c342b5812281d74bd3a808",
+      "authentication": {
+        "token": "{% response 'body', 'req_0ba8b27582784596be8c670da55b8f8b', 'b64::JC50b2tlbg==::46b', 'no-history', 60 %}",
+        "type": "bearer"
+      },
+      "body": {},
+      "created": 1604955936837,
+      "description": "",
+      "headers": [],
+      "isPrivate": false,
+      "metaSortKey": -1604955936837,
+      "method": "GET",
+      "modified": 1605018376834,
+      "name": "ListUsers",
+      "parameters": [],
+      "parentId": "fld_545e0aac40eb437e8475acf1042d63bb",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ base_url }}/{{ resourse }}",
+      "_type": "request"
+    },
+    {
+      "_id": "req_f4ecb83dd6654ccb83a2b96c2588a85d",
+      "authentication": {
+        "token": "{% response 'body', 'req_0ba8b27582784596be8c670da55b8f8b', 'b64::JC50b2tlbg==::46b', 'no-history', 60 %}",
+        "type": "bearer"
+      },
+      "body": {},
+      "created": 1605018602700,
+      "description": "",
+      "headers": [],
+      "isPrivate": false,
+      "metaSortKey": -1603142929660.75,
+      "method": "GET",
+      "modified": 1605105805352,
+      "name": "ShowProfile",
+      "parameters": [],
+      "parentId": "fld_545e0aac40eb437e8475acf1042d63bb",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ base_url }}/profile",
+      "_type": "request"
+    },
+    {
+      "_id": "req_64ab318147e74d0fbd84879a627e29cc",
+      "authentication": {
+        "token": "{% response 'body', 'req_0ba8b27582784596be8c670da55b8f8b', 'b64::JC50b2tlbg==::46b', 'no-history', 60 %}",
+        "type": "bearer"
+      },
+      "body": {},
+      "created": 1605146387820,
+      "description": "",
+      "headers": [],
+      "isPrivate": false,
+      "metaSortKey": -1602689677866.6875,
+      "method": "GET",
+      "modified": 1605146397994,
+      "name": "ShowProfilePreferences",
+      "parameters": [],
+      "parentId": "fld_545e0aac40eb437e8475acf1042d63bb",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ base_url }}/profile/preferences",
+      "_type": "request"
+    },
+    {
+      "_id": "req_896de7c1d62d4ecda27730fe6f6f06e7",
+      "authentication": {
+        "token": "{% response 'body', 'req_0ba8b27582784596be8c670da55b8f8b', 'b64::JC50b2tlbg==::46b', 'no-history', 60 %}",
+        "type": "bearer"
+      },
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"name\" : \"Misael Bandeira Silveira\",\n\t\"email\": \"misaelbandeira@gmail.com\",\n\t\"old_password\": \"123456\",\n\t\"password\": \"123456\",\n\t\"password_confirmation\":\"123456\",\n\t\"gender\": \"male\"\n\t\n}"
+      },
+      "created": 1605020465003,
+      "description": "",
+      "headers": [
+        {
+          "id": "pair_afead2f54a3c44d0afc3670e30b0a28b",
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1602236426072.625,
+      "method": "PUT",
+      "modified": 1605020605598,
+      "name": "UpdateProfile",
+      "parameters": [],
+      "parentId": "fld_545e0aac40eb437e8475acf1042d63bb",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ base_url }}/profile",
+      "_type": "request"
+    },
+    {
+      "_id": "req_80bfb40e9de742d9ab118ade064f5006",
+      "authentication": {},
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"name\": \"Misael Bandeira Silveira\",\n\t\"email\": \"misael.bandeira@gmail.com\",\n\t\"password\": \"123456\"\n}"
+      },
+      "created": 1604957678519,
+      "description": "",
+      "headers": [
+        {
+          "id": "pair_a095ea78144749708618debc202cb7ba",
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1601329922484.5,
+      "method": "POST",
+      "modified": 1605057601481,
+      "name": "CreateUser",
+      "parameters": [],
+      "parentId": "fld_545e0aac40eb437e8475acf1042d63bb",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ base_url }}/{{ resourse }}/",
+      "_type": "request"
+    },
+    {
+      "_id": "env_a56a4434d4bfedcb4119282fd06cae9f533226b2",
+      "color": null,
+      "created": 1604955798740,
+      "data": {},
+      "dataPropertyOrder": {},
+      "isPrivate": false,
+      "metaSortKey": 1604955798740,
+      "modified": 1604955910658,
+      "name": "Base Environment",
+      "parentId": "wrk_f10063a658f84b6997fb8238087961c4",
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_a56a4434d4bfedcb4119282fd06cae9f533226b2",
+      "cookies": [],
+      "created": 1604955798743,
+      "modified": 1604955798743,
+      "name": "Default Jar",
+      "parentId": "wrk_f10063a658f84b6997fb8238087961c4",
+      "_type": "cookie_jar"
+    },
+    {
+      "_id": "spc_533d1f1e065845d9b471f84a47fa0d7f",
+      "contentType": "yaml",
+      "contents": "",
+      "created": 1604955798523,
+      "fileName": "Linker",
+      "modified": 1604955798523,
+      "parentId": "wrk_f10063a658f84b6997fb8238087961c4",
+      "_type": "api_spec"
+    },
+    {
+      "_id": "env_65ee187c15044a80a9f64d45e368b1a0",
+      "color": "#400080",
+      "created": 1604955881534,
+      "data": { "base_url": "localhost:3333" },
+      "dataPropertyOrder": { "&": ["base_url"] },
+      "isPrivate": false,
+      "metaSortKey": 1604955881534,
+      "modified": 1604955914515,
+      "name": "Dev",
+      "parentId": "env_a56a4434d4bfedcb4119282fd06cae9f533226b2",
+      "_type": "environment"
+    }
+  ]
+}
