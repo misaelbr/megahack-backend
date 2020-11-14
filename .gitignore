@@ -3,6 +3,7 @@ build/
 tmp/
 tmp/*
 !tmp/.gitkeep
+!tmp/upload/.gitkeep
 coverage
 .ENV
 ormconfig.json
