@@ -3,6 +3,7 @@ import { inject, injectable } from 'tsyringe';
 import LookStyle from '@modules/looks/infra/typeorm/entities/LookStyle';
 
 import IProductsLookStylesRepository from '@modules/products/repositories/IProductsLookStylesRepository';
+import { classToClass } from 'class-transformer';
 
 interface IRequest {
   product_id: string;
@@ -22,9 +23,11 @@ class ListProductsLookStylesByProductIdService {
     );
 
     if (productsLookStylesList) {
-      return productsLookStylesList.map<LookStyle>(productsLookStyle => {
+      const looks = productsLookStylesList.map<LookStyle>(productsLookStyle => {
         return Object.assign(productsLookStyle.look_style);
       });
+
+      return classToClass(looks);
     }
 
     return undefined;
