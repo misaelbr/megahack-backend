@@ -21,6 +21,14 @@ ordersRouter.post(
   }),
   ordersController.create
 );
-ordersRouter.get('/:id', ordersController.show);
+ordersRouter.get(
+  '/:id',
+  celebrate({
+    [Segments.PARAMS]: {
+      id: Joi.string().uuid().required(),
+    },
+  }),
+  ordersController.show
+);
 
 export default ordersRouter;
