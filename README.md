@@ -8,7 +8,7 @@
 
 ## Configuração inicial
 
-Antes de rodar a aplicação, é necessário renomear o ormconfig.json-example para ormconfig.json.
+Antes de rodar a aplicação, é necessário renomear o [ormconfig.json.dist](ormconfig.json.dist) para ormconfig.json.
 Abaixo, o conteúdo do arquivo, que deverá ser ajustado de acordo com as configurações do postgres em sua máquina.
 
 ```json
@@ -30,7 +30,7 @@ Abaixo, o conteúdo do arquivo, que deverá ser ajustado de acordo com as config
 ]
 ```
 
-Após esse procedimento, renomear o .env-example para .env, ajustando as variáveis da
+Após esse procedimento, renomear o [.env.dist](.env.dist) para .env, ajustando as variáveis da
 API e do APP com as suas configurações.
 
 Note, que a configuração do Redis, para cache, está no final deste arquivo. A
