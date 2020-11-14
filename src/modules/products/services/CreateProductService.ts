@@ -10,6 +10,7 @@ interface IRequest {
   color: string;
   size: string;
   brand: string;
+  quantity: number;
   price: number;
   description: string;
   gender: string;
@@ -31,6 +32,7 @@ class CreateProductService {
     color,
     size,
     brand,
+    quantity,
     price,
     description,
     gender,
@@ -41,6 +43,7 @@ class CreateProductService {
       color,
       size,
       brand,
+      quantity,
       price,
       description,
       gender,

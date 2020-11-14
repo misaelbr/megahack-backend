@@ -13,6 +13,7 @@ interface IRequest {
   color: string;
   size: string;
   brand: string;
+  quantity: number;
   price: number;
   description: string;
   gender: string;
@@ -35,6 +36,7 @@ class UpdateProductService {
     color,
     size,
     brand,
+    quantity,
     price,
     description,
     gender,
@@ -50,6 +52,7 @@ class UpdateProductService {
     product.color = color;
     product.size = size;
     product.brand = brand;
+    product.quantity = quantity;
     product.price = price;
     product.description = description;
     product.gender = gender;
