@@ -7,47 +7,59 @@ import CreateUserPreferencesService from '@modules/users/services/CreateUserPref
 
 export default class UserPreferencesController {
   public async create(request: Request, response: Response): Promise<Response> {
-    const user_id = request.user.id;
-    const { favorite_color, favorite_size, look_styles_id } = request.body;
+    try {
+      const user_id = request.user.id;
+      const { favorite_color, favorite_size, look_styles_id } = request.body;
 
-    const createUserPreferences = container.resolve(
-      CreateUserPreferencesService
-    );
+      const createUserPreferences = container.resolve(
+        CreateUserPreferencesService
+      );
 
-    const userPreferences = await createUserPreferences.execute({
-      favorite_color,
-      favorite_size,
-      look_styles_id,
-      user_id,
-    });
+      const userPreferences = await createUserPreferences.execute({
+        favorite_color,
+        favorite_size,
+        look_styles_id,
+        user_id,
+      });
 
-    return response.json(userPreferences);
+      return response.json(userPreferences);
+    } catch (err) {
+      return response.status(400).json({ error: err.message });
+    }
   }
 
   public async show(request: Request, response: Response): Promise<Response> {
-    const user_id = request.user.id;
+    try {
+      const user_id = request.user.id;
 
-    const showUserPreferences = container.resolve(ShowUserPreferencesService);
+      const showUserPreferences = container.resolve(ShowUserPreferencesService);
 
-    const userPreferences = await showUserPreferences.execute({ user_id });
+      const userPreferences = await showUserPreferences.execute({ user_id });
 
-    return response.json(userPreferences);
+      return response.json(userPreferences);
+    } catch (err) {
+      return response.status(400).json({ error: err.message });
+    }
   }
 
   public async update(request: Request, response: Response): Promise<Response> {
-    const user_id = request.user.id;
-    const { favorite_color, favorite_size, look_styles_id } = request.body;
+    try {
+      const user_id = request.user.id;
+      const { favorite_color, favorite_size, look_styles_id } = request.body;
 
-    const updateUserPreferences = container.resolve(
-      UpdateUserPreferencesService
-    );
-    const userPreferences = await updateUserPreferences.execute({
-      favorite_color,
-      favorite_size,
-      look_styles_id,
-      user_id,
-    });
+      const updateUserPreferences = container.resolve(
+        UpdateUserPreferencesService
+      );
+      const userPreferences = await updateUserPreferences.execute({
+        favorite_color,
+        favorite_size,
+        look_styles_id,
+        user_id,
+      });
 
-    return response.json(userPreferences);
+      return response.json(userPreferences);
+    } catch (err) {
+      return response.status(400).json({ error: err.message });
+    }
   }
 }

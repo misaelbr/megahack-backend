@@ -6,16 +6,20 @@ import { classToClass } from 'class-transformer';
 
 export default class ProductsImageController {
   public async update(request: Request, response: Response): Promise<Response> {
-    const { product_id: id } = request.body;
-    const productFileName = request.file.filename;
+    try {
+      const { product_id: id } = request.body;
+      const productFileName = request.file.filename;
 
-    const updateProductImage = container.resolve(UpdateProductImageService);
+      const updateProductImage = container.resolve(UpdateProductImageService);
 
-    const product = await updateProductImage.execute({
-      id,
-      productFileName,
-    });
+      const product = await updateProductImage.execute({
+        id,
+        productFileName,
+      });
 
-    return response.json(classToClass(product));
+      return response.json(classToClass(product));
+    } catch (err) {
+      return response.status(400).json({ error: err.message });
+    }
   }
 }

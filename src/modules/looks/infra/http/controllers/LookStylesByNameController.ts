@@ -7,16 +7,19 @@ import AppError from '@shared/errors/AppError';
 
 export default class LookStylesByNameController {
   public async show(request: Request, response: Response): Promise<Response> {
-    const { name } = request.params;
+    try {
+      const { name } = request.params;
 
-    const findLookStyles = container.resolve(ListLookStylesByNameService);
+      const findLookStyles = container.resolve(ListLookStylesByNameService);
 
-    const lookStyles = await findLookStyles.execute({ name });
+      const lookStyles = await findLookStyles.execute({ name });
+      return response.json(lookStyles);
 
-    if (!lookStyles) {
-      throw new AppError('LookStyle name not found!', 404);
+      if (!lookStyles) {
+        throw new AppError('LookStyle name not found!', 404);
+      }
+    } catch (err) {
+      return response.status(400).json({ error: err.message });
     }
-
-    return response.json(lookStyles);
   }
 }

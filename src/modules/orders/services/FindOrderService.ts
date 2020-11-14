@@ -13,13 +13,7 @@ interface IRequest {
 class FindOrderService {
   constructor(
     @inject('OrdersRepository')
-    private ordersRepository: IOrdersRepository,
-
-    @inject('ProductsRepository')
-    private productsRepository: IProductsRepository,
-
-    @inject('UsersRepository')
-    private usersRepository: IUsersRepository
+    private ordersRepository: IOrdersRepository
   ) {}
 
   public async execute({ id }: IRequest): Promise<Order | undefined> {

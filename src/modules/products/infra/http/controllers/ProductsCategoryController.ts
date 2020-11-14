@@ -10,45 +10,57 @@ import AppError from '@shared/errors/AppError';
 
 export default class ProductsController {
   public async index(request: Request, response: Response): Promise<Response> {
-    const listCategories = container.resolve(ListProductsCategoryService);
+    try {
+      const listCategories = container.resolve(ListProductsCategoryService);
 
-    const categories = await listCategories.execute();
+      const categories = await listCategories.execute();
 
-    return response.json(categories);
+      return response.json(categories);
+    } catch (err) {
+      return response.status(400).json({ error: err.message });
+    }
   }
 
   public async create(request: Request, response: Response): Promise<Response> {
-    const { name, description } = request.body;
+    try {
+      const { name, description } = request.body;
 
-    const createProductCategory = container.resolve(
-      CreateProductsCategoryService
-    );
+      const createProductCategory = container.resolve(
+        CreateProductsCategoryService
+      );
 
-    const category = await createProductCategory.execute({
-      name,
-      description,
-    });
+      const category = await createProductCategory.execute({
+        name,
+        description,
+      });
 
-    return response.json(category);
+      return response.json(category);
+    } catch (err) {
+      return response.status(400).json({ error: err.message });
+    }
   }
 
   public async update(request: Request, response: Response): Promise<Response> {
-    const { id, name, description } = request.body;
+    try {
+      const { id, name, description } = request.body;
 
-    const listCategoryByName = container.resolve(
-      ListProductsCategoryByNameService
-    );
+      const listCategoryByName = container.resolve(
+        ListProductsCategoryByNameService
+      );
 
-    const categoryNameExists = await listCategoryByName.execute({ name });
+      const categoryNameExists = await listCategoryByName.execute({ name });
 
-    if (categoryNameExists) {
-      throw new AppError('Category name already in use!', 400);
+      if (categoryNameExists) {
+        throw new AppError('Category name already in use!', 400);
+      }
+
+      const update = container.resolve(UpdateProductsCategoryService);
+
+      const updatedCategory = await update.execute({ id, name, description });
+
+      return response.json(updatedCategory);
+    } catch (err) {
+      return response.status(400).json({ error: err.message });
     }
-
-    const update = container.resolve(UpdateProductsCategoryService);
-
-    const updatedCategory = await update.execute({ id, name, description });
-
-    return response.json(updatedCategory);
   }
 }

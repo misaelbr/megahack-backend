@@ -7,29 +7,37 @@ import ShowProfileService from '@modules/users/services/ShowProfileService';
 
 export default class ProfileController {
   public async show(request: Request, response: Response): Promise<Response> {
-    const user_id = request.user.id;
+    try {
+      const user_id = request.user.id;
 
-    const showProfile = await container.resolve(ShowProfileService);
+      const showProfile = await container.resolve(ShowProfileService);
 
-    const user = await showProfile.execute({ user_id });
+      const user = await showProfile.execute({ user_id });
 
-    return response.json(classToClass(user));
+      return response.json(classToClass(user));
+    } catch (err) {
+      return response.status(400).json({ error: err.message });
+    }
   }
 
   public async update(request: Request, response: Response): Promise<Response> {
-    const user_id = request.user.id;
-    const { name, email, old_password, password, gender } = request.body;
+    try {
+      const user_id = request.user.id;
+      const { name, email, old_password, password, gender } = request.body;
 
-    const updateProfile = container.resolve(UpdateProfileService);
-    const user = await updateProfile.execute({
-      user_id,
-      name,
-      email,
-      old_password,
-      password,
-      gender,
-    });
+      const updateProfile = container.resolve(UpdateProfileService);
+      const user = await updateProfile.execute({
+        user_id,
+        name,
+        email,
+        old_password,
+        password,
+        gender,
+      });
 
-    return response.json(classToClass(user));
+      return response.json(classToClass(user));
+    } catch (err) {
+      return response.status(400).json({ error: err.message });
+    }
   }
 }

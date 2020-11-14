@@ -17,26 +17,34 @@ export default class LookStylesController {
   }
 
   public async show(request: Request, response: Response): Promise<Response> {
-    const { look_styles_id } = request.params;
+    try {
+      const { look_styles_id } = request.params;
 
-    const findLookStyles = container.resolve(ListLookStylesByIdService);
+      const findLookStyles = container.resolve(ListLookStylesByIdService);
 
-    const lookStyles = await findLookStyles.execute({ look_styles_id });
+      const lookStyles = await findLookStyles.execute({ look_styles_id });
 
-    if (!lookStyles) {
-      throw new AppError('LookStyle id not found!', 404);
+      if (!lookStyles) {
+        throw new AppError('LookStyle id not found!', 404);
+      }
+
+      return response.json(lookStyles);
+    } catch (err) {
+      return response.status(400).json({ error: err.message });
     }
-
-    return response.json(lookStyles);
   }
 
   public async create(request: Request, response: Response): Promise<Response> {
-    const { name, description } = request.body;
+    try {
+      const { name, description } = request.body;
 
-    const createLookStyles = container.resolve(CreateLookStylesService);
+      const createLookStyles = container.resolve(CreateLookStylesService);
 
-    const lookStyles = await createLookStyles.execute({ name, description });
+      const lookStyles = await createLookStyles.execute({ name, description });
 
-    return response.json(lookStyles);
+      return response.json(lookStyles);
+    } catch (err) {
+      return response.status(400).json({ error: err.message });
+    }
   }
 }

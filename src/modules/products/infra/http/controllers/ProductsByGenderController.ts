@@ -7,13 +7,17 @@ import AppError from '@shared/errors/AppError';
 
 class ProductsByGenderController {
   public async index(request: Request, response: Response): Promise<Response> {
-    const { gender } = request.params;
+    try {
+      const { gender } = request.params;
 
-    const productsList = container.resolve(ListProductsByGenderService);
+      const productsList = container.resolve(ListProductsByGenderService);
 
-    const products = await productsList.execute({ gender });
+      const products = await productsList.execute({ gender });
 
-    return response.json(products);
+      return response.json(products);
+    } catch (err) {
+      return response.status(400).json({ error: err.message });
+    }
   }
 }
 
