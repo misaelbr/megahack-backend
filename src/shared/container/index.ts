@@ -24,6 +24,9 @@ import ProductsLookStylesRepository from '@modules/products/infra/typeorm/reposi
 import ILookStylesRepository from '@modules/looks/repositories/ILookStylesRepository';
 import LookStylesRepository from '@modules/looks/infra/typeorm/repositories/LookStylesRepository';
 
+import IOrdersRepository from '@modules/orders/repositories/IOrdersRepository';
+import OrdersRepository from '@modules/orders/infra/typeorm/repositories/OrdersRepository';
+
 container.registerSingleton<IUsersRepository>(
   'UsersRepository',
   UsersRepository
@@ -57,4 +60,9 @@ container.registerSingleton<IProductsLookStylesRepository>(
 container.registerSingleton<ILookStylesRepository>(
   'LookStylesRepository',
   LookStylesRepository
+);
+
+container.registerSingleton<IOrdersRepository>(
+  'OrdersRepository',
+  OrdersRepository
 );

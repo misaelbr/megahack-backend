@@ -6,9 +6,7 @@ import {
   UpdateDateColumn,
   JoinColumn,
   ManyToOne,
-  ManyToMany,
   OneToMany,
-  JoinTable,
 } from 'typeorm';
 
 import { Expose } from 'class-transformer';
@@ -17,6 +15,7 @@ import ProductsCategory from './ProductsCategory';
 
 import uploadConfig from '@config/upload';
 import ProductLookStyles from './ProductsLookStyles';
+import OrdersProducts from '@modules/orders/infra/typeorm/entities/OrdersProducts';
 
 @Entity('products')
 class Product {
@@ -35,8 +34,11 @@ class Product {
   @Column()
   brand: string;
 
-  @Column()
+  @Column('decimal')
   price: number;
+
+  @Column('int')
+  quantity: number;
 
   @Column()
   description: string;
@@ -75,6 +77,9 @@ class Product {
     product_look_styles => product_look_styles.product
   )
   product_look_styles: ProductLookStyles[];
+
+  @OneToMany(() => OrdersProducts, order_products => order_products.product)
+  order_products: OrdersProducts[];
 
   @CreateDateColumn()
   created_at: Date;

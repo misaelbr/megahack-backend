@@ -2,6 +2,11 @@ import Product from '../infra/typeorm/entities/Product';
 
 import ICreateProductDTO from '../dtos/ICreateProductDTO';
 import IFindAllProductsByCatAntGenderDTO from '../dtos/IFindAllProductsByCatAndGenderDTO';
+import IUpdateProductsQuantityDTO from '../dtos/IUpdateProductsQuantityDTO';
+
+interface IFindProducts {
+  id: string;
+}
 
 export default interface IProductsRepository {
   create(data: ICreateProductDTO): Promise<Product>;
@@ -16,4 +21,6 @@ export default interface IProductsRepository {
   findAllProductsByCategoryIdAndGender(
     data: IFindAllProductsByCatAntGenderDTO
   ): Promise<Product[] | undefined>;
+  findAllById(products: IFindProducts[]): Promise<Product[]>;
+  updateQuantity(products: IUpdateProductsQuantityDTO[]): Promise<Product[]>;
 }

@@ -1,10 +1,15 @@
-import { getRepository, Repository } from 'typeorm';
+import { getRepository, Repository, In } from 'typeorm';
 
 import IProductsRepository from '@modules/products/repositories/IProductsRepository';
 import ICreateProductDTO from '@modules/products/dtos/ICreateProductDTO';
+import IUpdateProductsQuantityDTO from '@modules/products/dtos/IUpdateProductsQuantityDTO';
 
 import Product from '../entities/Product';
 import IFindAllProductsByCatAntGenderDTO from '@modules/products/dtos/IFindAllProductsByCatAndGenderDTO';
+
+interface IFindProducts {
+  id: string;
+}
 
 class ProductsRepository implements IProductsRepository {
   private ormRepository: Repository<Product>;
@@ -73,6 +78,24 @@ class ProductsRepository implements IProductsRepository {
     });
 
     return products;
+  }
+
+  public async findAllById(products: IFindProducts[]): Promise<Product[]> {
+    const productIds = products.map(product => product.id);
+
+    const existentProducts = await this.ormRepository.find({
+      where: {
+        id: In(productIds),
+      },
+    });
+
+    return existentProducts;
+  }
+
+  public async updateQuantity(
+    products: IUpdateProductsQuantityDTO[]
+  ): Promise<Product[]> {
+    return await this.ormRepository.save(products);
   }
 }
 

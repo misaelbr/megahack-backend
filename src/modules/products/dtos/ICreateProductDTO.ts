@@ -3,6 +3,7 @@ export default interface ICreateProductDTO {
   color: string;
   size: string;
   brand: string;
+  quantity: number;
   price: number;
   description: string;
   gender: string;
