@@ -1,6 +1,6 @@
 import { inject, injectable } from 'tsyringe';
 
-import ProductsLookStyles from '@modules/products/infra/typeorm/entities/ProductsLookStyles';
+import LookStyle from '@modules/looks/infra/typeorm/entities/LookStyle';
 
 import IProductsLookStylesRepository from '@modules/products/repositories/IProductsLookStylesRepository';
 
@@ -16,12 +16,18 @@ class ListProductsLookStylesByProductIdService {
 
   public async execute({
     product_id,
-  }: IRequest): Promise<ProductsLookStyles[] | undefined> {
-    const productsLookStyles = await this.productsLookStylesRepository.findByProductId(
+  }: IRequest): Promise<LookStyle[] | undefined> {
+    const productsLookStylesList = await this.productsLookStylesRepository.findByProductId(
       product_id
     );
 
-    return productsLookStyles;
+    if (productsLookStylesList) {
+      return productsLookStylesList.map<LookStyle>(productsLookStyle => {
+        return Object.assign(productsLookStyle.look_style);
+      });
+    }
+
+    return undefined;
   }
 }
 
