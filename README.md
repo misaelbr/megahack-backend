@@ -116,3 +116,8 @@ yarn typeorm migration:run
 
 yarn dev:server
 ```
+
+## Testando as rotas
+
+No diretório artefatos, está disponibizilzado um [arquivo](artefatos/Insomnia.json) do [Insominia](https://insomnia.rest/download/)
+que você pode importar para o seu Insomnia e testar as rotas do backend.

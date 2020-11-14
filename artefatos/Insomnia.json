@@ -1,9 +1,86 @@
 {
   "_type": "export",
   "__export_format": 4,
-  "__export_date": "2020-11-14T02:07:16.253Z",
+  "__export_date": "2020-11-14T19:21:11.729Z",
   "__export_source": "insomnia.desktop.app:v2020.3.3",
   "resources": [
+    {
+      "_id": "req_d25823689d3e4eb8bff814c26e51d10b",
+      "authentication": {},
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"user_id\": \"77ab0ba3-d1bd-49a2-ac42-153ad07f0d46\",\n\t\"products\": [ \n\t{\n\t\t\"id\": \"738becef-2081-4882-967c-da4be127beb0\",\n\t\t\"price\": 200.20,\n\t\t\"quantity\": 1\n\t}]\n}"
+      },
+      "created": 1605376272409,
+      "description": "",
+      "headers": [
+        {
+          "id": "pair_2644192f722e409eadea2eb9cae5c5ff",
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1605376272409,
+      "method": "POST",
+      "modified": 1605376613608,
+      "name": "CreateOrder",
+      "parameters": [],
+      "parentId": "fld_33f83b4382bf4e0d912aa2701bda456d",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ base_url }}/{{ resourse }}",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_33f83b4382bf4e0d912aa2701bda456d",
+      "created": 1605376199096,
+      "description": "",
+      "environment": { "resourse": "orders" },
+      "environmentPropertyOrder": { "&": ["resourse"] },
+      "metaSortKey": -1605376199096,
+      "modified": 1605376215132,
+      "name": "Orders",
+      "parentId": "wrk_f10063a658f84b6997fb8238087961c4",
+      "_type": "request_group"
+    },
+    {
+      "_id": "wrk_f10063a658f84b6997fb8238087961c4",
+      "created": 1604955798492,
+      "description": "",
+      "modified": 1604955798492,
+      "name": "Linker",
+      "parentId": null,
+      "scope": null,
+      "_type": "workspace"
+    },
+    {
+      "_id": "req_8d1ab47450c046029ce91af8d8f53462",
+      "authentication": {},
+      "body": {},
+      "created": 1605381436660,
+      "description": "",
+      "headers": [],
+      "isPrivate": false,
+      "metaSortKey": -1605342884605,
+      "method": "GET",
+      "modified": 1605381471326,
+      "name": "ListOrder",
+      "parameters": [],
+      "parentId": "fld_33f83b4382bf4e0d912aa2701bda456d",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ base_url }}/{{ resourse }}/d2de7a1d-6afe-4cf3-b46e-9c7d4f2a4b87",
+      "_type": "request"
+    },
     {
       "_id": "req_b7dca3f8b3634f60b061252c258416d7",
       "authentication": {},
@@ -47,16 +124,6 @@
       "name": "Looks",
       "parentId": "wrk_f10063a658f84b6997fb8238087961c4",
       "_type": "request_group"
-    },
-    {
-      "_id": "wrk_f10063a658f84b6997fb8238087961c4",
-      "created": 1604955798492,
-      "description": "",
-      "modified": 1604955798492,
-      "name": "Linker",
-      "parentId": null,
-      "scope": null,
-      "_type": "workspace"
     },
     {
       "_id": "req_bc40db086caf4c319357a621a7ee3d15",
@@ -237,8 +304,8 @@
       "isPrivate": false,
       "metaSortKey": -1605309496801,
       "method": "GET",
-      "modified": 1605309762669,
-      "name": "ListProductsByLookId",
+      "modified": 1605376243174,
+      "name": "ListLookByProductID",
       "parameters": [],
       "parentId": "fld_76b2f5b78cd145578d73930ca06370d7",
       "settingDisableRenderRequestBody": false,
@@ -304,7 +371,7 @@
       "isPrivate": false,
       "metaSortKey": -1605291964843.5,
       "method": "GET",
-      "modified": 1605294123398,
+      "modified": 1605366493913,
       "name": "ListProductsByLookId",
       "parameters": [],
       "parentId": "fld_76b2f5b78cd145578d73930ca06370d7",
@@ -469,7 +536,7 @@
       "authentication": {},
       "body": {
         "mimeType": "application/json",
-        "text": "{\n\t\"id\": \"738becef-2081-4882-967c-da4be127beb0\",\n\t\"name\": \"Calça floreada\",\n\t\"color\": \"azul\",\n\t\"size\": \"40\",\n\t\"price\": 220.00,\n\t\"brand\": \"Tevah\",\n\t\"description\": \"Calça para eventos festivos\",\n\t\"gender\": \"Masculina\",\n\t\"category_id\": \"1ba9f69f-87b9-40fd-9235-94fc09925c10\" \t\n}"
+        "text": "{\n\t\"id\": \"738becef-2081-4882-967c-da4be127beb0\",\n\t\"name\": \"Calça floreada\",\n\t\"color\": \"azul\",\n\t\"size\": \"40\",\n\t\"quantity\": 10,\n\t\"price\": 220.00,\n\t\"brand\": \"Tevah\",\n\t\"description\": \"Calça para eventos festivos\",\n\t\"gender\": \"Masculina\",\n\t\"category_id\": \"1ba9f69f-87b9-40fd-9235-94fc09925c10\" \t\n}"
       },
       "created": 1605065753513,
       "description": "",
@@ -483,7 +550,7 @@
       "isPrivate": false,
       "metaSortKey": -1605023338371.125,
       "method": "PUT",
-      "modified": 1605094859869,
+      "modified": 1605376410465,
       "name": "UpdateProduct",
       "parameters": [],
       "parentId": "fld_76b2f5b78cd145578d73930ca06370d7",
